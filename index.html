@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTasks Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>🧠 DevTasks Board</h1>
+
+  <div class="board">
+
+    <div class="column">
+      <h2>📝 To Do</h2>
+      <button onclick="openModal('todo')">+ Adicionar</button>
+      <div class="tasks" id="todo"></div>
+    </div>
+
+    <div class="column">
+      <h2>🚧 Em Progresso</h2>
+      <button onclick="openModal('progress')">+ Adicionar</button>
+      <div class="tasks" id="progress"></div>
+    </div>
+
+    <div class="column">
+      <h2>✅ Concluído</h2>
+      <button onclick="openModal('done')">+ Adicionar</button>
+      <div class="tasks" id="done"></div>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Nova tarefa</h3>
+      <input type="text" id="taskInput" placeholder="Digite a tarefa">
+      <div class="modal-actions">
+        <button onclick="saveTask()">Salvar</button>
+        <button onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
