@@ -2,46 +2,49 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevTasks Board</title>
+
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828817.png">
+
+  <meta name="description" content="Kanban task manager com drag and drop feito em JavaScript">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <h1>🧠 DevTasks Board</h1>
+  <h1>📌 DevTasks Board</h1>
+
+  <button onclick="openModal()">+ Nova Tarefa</button>
 
   <div class="board">
 
     <div class="column">
       <h2>📝 To Do</h2>
-      <button onclick="openModal('todo')">+ Adicionar</button>
-      <div class="tasks" id="todo"></div>
+      <div id="todo" class="tasks"></div>
     </div>
 
     <div class="column">
-      <h2>🚧 Em Progresso</h2>
-      <button onclick="openModal('progress')">+ Adicionar</button>
-      <div class="tasks" id="progress"></div>
+      <h2>🚧 Doing</h2>
+      <div id="doing" class="tasks"></div>
     </div>
 
     <div class="column">
-      <h2>✅ Concluído</h2>
-      <button onclick="openModal('done')">+ Adicionar</button>
-      <div class="tasks" id="done"></div>
+      <h2>✅ Done</h2>
+      <div id="done" class="tasks"></div>
     </div>
 
   </div>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal hidden">
+  <!-- Modal -->
+  <div id="modal" class="modal">
     <div class="modal-content">
       <h3>Nova tarefa</h3>
-      <input type="text" id="taskInput" placeholder="Digite a tarefa">
-      <div class="modal-actions">
-        <button onclick="saveTask()">Salvar</button>
-        <button onclick="closeModal()">Cancelar</button>
-      </div>
+
+      <input type="text" id="taskInput" placeholder="Ex: Estudar JavaScript">
+
+      <button onclick="addTask()">Adicionar</button>
+      <button onclick="closeModal()">Cancelar</button>
     </div>
   </div>
 
